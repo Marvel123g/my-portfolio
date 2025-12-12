@@ -1,0 +1,115 @@
+nav {
+  background: rgba(26, 26, 26, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 20px 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  .btn {
+    color: white;
+    position: relative;
+    padding-bottom: 3px;
+    &.active {
+      &::after {
+        width: 100%;
+        animation: slideInBorder 0.5s ease forwards;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #4dabf7;
+      transform-origin: left;
+    }
+  }
+  button {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    border: 1px solid rgba(77, 171, 247, 0.3);
+    padding: 8px 12px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(77, 171, 247, 0.2);
+      border-color: #4dabf7;
+      transform: scale(1.05);
+    }
+  }
+  h2 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #4dabf7, #da77f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+  }
+  .mobile-link {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.98);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+      margin: 0 auto;
+      gap: 20px;
+      animation: slideDown 1s ease forwards;
+      a {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        &:hover {
+          background: rgba(77, 171, 247, 0.1);
+          color: #4dabf7;
+          transform: translateX(10px);
+        }
+      }
+    }
+    .cv-btn {
+      background-color: blue;
+      border: none;
+    }
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInBorder {
+  0% {
+    width: 0;
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+  100% {
+    // opacity: 1;
+    // transform: translateY(0);
+    width: 100%;
+    transform: scaleX(1);
+  }
+}
