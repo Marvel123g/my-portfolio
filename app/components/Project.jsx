@@ -53,12 +53,10 @@ export default function Project() {
             </div>
 
             <div className="view d-flex gap-2">
-              <a href="https://github.com/Marvel123g/portfolio-web-app.git">
+              <a href="https://github.com/Marvel123g/my-portfolio.git ">
                 View Project
               </a>
-              <a href="https://portfolio-web-app-lovat.vercel.app/">
-                View Code
-              </a>
+              <a href="https://marvelousdev.vercel.app/">View Code</a>
             </div>
           </div>
         </div>
