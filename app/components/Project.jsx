@@ -23,7 +23,7 @@ export default function Project() {
           </div>
         </div>
         <div className="grid-item">
-          <img src="./Bible-study.png" alt="job-search project" />
+          <img src="./Bible-study.png" alt="bible study project" />
           <div className="item-content">
             <h3>Bible Study</h3>
             <p></p>
@@ -42,7 +42,7 @@ export default function Project() {
           </div>
         </div>
         <div className="grid-item">
-          <img src="./myPortfolio.png" alt="job-search project" />
+          <img src="./myPortfolio.png" alt="my portfolio" />
           <div className="item-content">
             <h3>Portfolio Website</h3>
             <p></p>
@@ -83,7 +83,7 @@ export default function Project() {
           </div>
         </div>
         <div className="grid-item">
-          <img src="./product-list.jpg" alt="college" />
+          <img src="./product-list.jpg" alt="product list with cart" />
           <div className="item-content">
             <h3>Product List with Cart</h3>
             <p></p>
