@@ -18,6 +18,34 @@ export default function NavBar() {
     setActiveLink(currentLink);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      const home = document.getElementById("home");
+      const about = document.getElementById("about");
+      const project = document.getElementById("project");
+      const resume = document.getElementById("resume");
+      const contact = document.getElementById("contact");
+
+      if (!about && !resume && !project && !contact && !home) return;
+
+      if (scrollPosition >= contact.offsetTop - 200) {
+        setActiveLink("contact");
+      } else if (scrollPosition >= resume.offsetTop - 200) {
+        setActiveLink("resume");
+      } else if (scrollPosition >= project.offsetTop - 200) {
+        setActiveLink("project");
+      } else if (scrollPosition >= about.offsetTop - 200) {
+        setActiveLink("about");
+      } else {
+        setActiveLink("home");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const isMobile = width <= 672;
   return (
     <nav className="d-flex align-center justify-space-between">
@@ -25,7 +53,7 @@ export default function NavBar() {
       {!isMobile ? (
         <div className="links d-flex gap-5">
           <a
-            href="#"
+            href="#home"
             className={`text-decoration-none btn ${
               activeLink === "home" ? "active" : ""
             }`}
@@ -84,7 +112,7 @@ export default function NavBar() {
         <div className="mobile-link d-flex gap-5">
           <div className="content">
             <a
-              href="#"
+              href="#home"
               className="text-decoration-none"
               onClick={handleCloseMenu}
             >

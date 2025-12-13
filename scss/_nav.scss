@@ -87,6 +87,11 @@ nav {
       border: none;
     }
   }
+  @media (max-width: 672px) {
+    .links {
+      display: none !important;
+    }
+  }
 }
 @keyframes slideDown {
   from {

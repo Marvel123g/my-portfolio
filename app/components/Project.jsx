@@ -42,19 +42,22 @@ export default function Project() {
           </div>
         </div>
         <div className="grid-item">
-          <img src="./portfolio1.png" alt="job-search project" />
+          <img src="./myPortfolio.png" alt="job-search project" />
           <div className="item-content">
             <h3>Portfolio Website</h3>
             <p></p>
             <div className="tech-stack d-flex gap-3">
-              <span>Boostrap</span>
               <span>SCSS</span>
               <span>EMAIL.JS</span>
             </div>
 
             <div className="view d-flex gap-2">
-              <a href="#">View Project</a>
-              <a href="#">View Code</a>
+              <a href="https://github.com/Marvel123g/portfolio-web-app.git">
+                View Project
+              </a>
+              <a href="https://portfolio-web-app-lovat.vercel.app/">
+                View Code
+              </a>
             </div>
           </div>
         </div>

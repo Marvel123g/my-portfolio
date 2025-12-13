@@ -1,5 +1,7 @@
 "use client";
 import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const form = useRef();
@@ -15,7 +17,9 @@ export default function Contact() {
       )
       .then(
         () => {
-          alert("Message sent Successfully");
+          toast("Message sent Successfully", {
+            style: { backgroundColor: "#22c55e", color: "#fff" },
+          });
           form.current.reset();
         },
         (error) => {
@@ -47,9 +51,15 @@ export default function Contact() {
           onSubmit={sendEmail}
           ref={form}
         >
-          <input type="text" placeholder="Your Name" />
-          <input type="text" placeholder="Your Email" />
-          <textarea type="text" rows="8" placeholder="Your Message" />
+          <input type="text" placeholder="Your Name" name="name" required />
+          <input type="email" placeholder="Your Email" name="email" required />
+          <textarea
+            type="text"
+            rows="8"
+            placeholder="Your Message"
+            name="message"
+            required
+          />
 
           <button>Send Message</button>
         </form>

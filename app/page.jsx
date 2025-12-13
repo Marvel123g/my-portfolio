@@ -15,9 +15,9 @@ export default function Home() {
               cursor
               cursorStyle="|"
               cursorColor="red"
-              typeSpeed={70}
-              deleteSpeed={100}
-              delaySpeed={200}
+              typeSpeed={90}
+              deleteSpeed={260}
+              delaySpeed={260}
               words={[
                 "Frontend Developer",
                 "React Developer",
@@ -36,8 +36,20 @@ export default function Home() {
           solutions.
         </p>
         <div className="ctas d-flex gap-3">
-          <button>Contact</button>
-          <button>Download CV</button>
+          <button>
+            <a href="#contact" className="text-decoration-none">
+              Contact
+            </a>
+          </button>
+          <button>
+            <a
+              href="./myCV.pdf"
+              download="myCV.pdf"
+              className="text-decoration-none"
+            >
+              Download CV
+            </a>
+          </button>
         </div>
       </div>
     </div>
