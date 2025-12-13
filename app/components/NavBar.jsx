@@ -53,7 +53,7 @@ export default function NavBar() {
       {!isMobile ? (
         <div className="links d-flex gap-5">
           <a
-            href="#home"
+            href="#"
             className={`text-decoration-none btn ${
               activeLink === "home" ? "active" : ""
             }`}
@@ -112,7 +112,7 @@ export default function NavBar() {
         <div className="mobile-link d-flex gap-5">
           <div className="content">
             <a
-              href="#home"
+              href="#"
               className="text-decoration-none"
               onClick={handleCloseMenu}
             >
