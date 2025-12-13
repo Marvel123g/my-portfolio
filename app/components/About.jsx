@@ -7,7 +7,7 @@ export default function About() {
       <div className="about-content d-flex align-center">
         <div className="text">
           <p>
-            I'm a passionate and detail-oriented frontend deveoper who enjoys
+            I'm a passionate and detail-oriented frontend developer who enjoys
             building clean, responsive, and user-friendy web experiences. My
             journey began with small projects and coding challenges on a
             platform called Frontend Mentor Challenge, where I learned how to
