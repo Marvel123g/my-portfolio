@@ -63,7 +63,7 @@ export default function Project() {
         <div className="grid-item">
           <img src="./budget-tracker.png" alt="budget-tracker" />
           <div className="item-content">
-            <h3>Budget Tracket</h3>
+            <h3>Budget Tracker</h3>
             <p></p>
             <div className="tech-stack d-flex gap-3">
               <span>SCSS</span>
