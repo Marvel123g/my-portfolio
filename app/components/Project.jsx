@@ -49,6 +49,7 @@ export default function Project() {
             <div className="tech-stack d-flex gap-3">
               <span>SCSS</span>
               <span>EMAIL.JS</span>
+              <span>Next.js</span>
             </div>
 
             <div className="view d-flex gap-2">
