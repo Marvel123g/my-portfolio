@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Home() {
   return (
     <div className="home d-flex align-center">
-      <img src="./hero.jpg" alt="hero" />
+      <img src="./hero.png" alt="hero" />
       <div className="content">
         <div className="header">
           <b className="hi">Hi I'm a</b>{" "}
