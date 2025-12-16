@@ -15,9 +15,9 @@ export default function Home() {
               cursor
               cursorStyle="|"
               cursorColor="red"
-              typeSpeed={90}
-              deleteSpeed={260}
-              delaySpeed={260}
+              typeSpeed={80}
+              deleteSpeed={250}
+              delaySpeed={250}
               words={[
                 "Frontend Developer",
                 "React Developer",
