@@ -38,8 +38,12 @@ export default function About() {
               <span>HTML, CSS, JavaScript, C++</span>
             </div>
             <div className="item d-flex flex-column">
-              <b>Frameworks & Tools</b>
-              <span>React.js, Next.js, Boostrap, SCSS</span>
+              <b>Frameworks & Libraries</b>
+              <span>React.js, Next.js, Bootstrap</span>
+            </div>
+            <div className="item d-flex flex-column">
+              <b>Styling</b>
+              <span>CSS, SCSS, Bootstrap</span>
             </div>
             <div className="item d-flex flex-column">
               <b>Database</b>

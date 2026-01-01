@@ -32,7 +32,7 @@ export default function Resume() {
                 <p>
                   This platform connects job seekers with employers through a
                   simple and interactive web system. It features two main pages:
-                  and amin page where jobs are posted, deleted, edited and
+                  an admin page where jobs are posted, deleted, edited and
                   application histories are viewed, and user page where
                   applicants can view available jobs and apply.This project was
                   built with a backend developer who handled the server-side

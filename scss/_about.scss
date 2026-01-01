@@ -21,7 +21,7 @@
 
       .skills {
         display: grid;
-        grid-template-columns: 3, 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 8px;
 
         margin-top: 19px;
@@ -30,9 +30,6 @@
           box-shadow: 0 6px 50px rgba(33, 150, 243, 0.3);
           padding: 20px;
         }
-      }
-      @media (max-width: 528px) {
-        grid-template-columns: 1fr;
       }
     }
     .image {
