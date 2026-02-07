@@ -39,7 +39,7 @@ export default function About() {
             </div>
             <div className="item d-flex flex-column">
               <b>Frameworks & Libraries</b>
-              <span>React.js, Next.js, Bootstrap</span>
+              <span>React.js, Next.js, Bootstrap, Framer-Motion, Chart.js</span>
             </div>
             <div className="item d-flex flex-column">
               <b>Styling</b>
