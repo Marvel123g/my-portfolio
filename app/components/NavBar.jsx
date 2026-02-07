@@ -148,8 +148,8 @@ export default function NavBar() {
             </a>
             <button className="cv-btn">
               <a
-                href="./myCV.pdf"
-                download="myCV.pdf"
+                href="./myCV1.pdf"
+                download="myCV1.pdf"
                 className="text-decoration-none"
                 onClick={handleCloseMenu}
               >
