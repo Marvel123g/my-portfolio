@@ -16,9 +16,7 @@ export default function Project() {
             </div>
             <div className="view d-flex gap-2">
               {/* <a href="#">View Project</a> */}
-              <a href="https://github.com/Marvel123g/Job-Search.git">
-                View Code
-              </a>
+            
             </div>
           </div>
         </div>
