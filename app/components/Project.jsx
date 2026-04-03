@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
 
@@ -25,9 +25,9 @@ export default function Project() {
 
           <div className="item-content">
             <h3>
-  Genjo Teacher (Work in Progress)
-  <span className="role-tag">Frontend</span>
-</h3>
+              Genjo Teacher (Work in Progress)
+              <span className="role-tag">Frontend</span>
+            </h3>
 
             <div className="tech-stack">
               <span>Tailwindcss</span>
@@ -53,9 +53,7 @@ export default function Project() {
             </div>
 
             <div className="view">
-              <a href="https://bible-study-project.vercel.app/">
-                View Project
-              </a>
+              <a href="https://bible-study-project.vercel.app/">View Project</a>
             </div>
           </div>
         </div>
@@ -67,13 +65,11 @@ export default function Project() {
 
           <div className="item-content">
             <h3 className="health_heading d-flex align-center">
-  Health Shield
-  <span className="role-tag">Frontend</span>
-</h3>
+              Health Shield
+              <span className="role-tag">Frontend</span>
+            </h3>
 
-<p className="hackathon-tag">
-  Cavista Technologies Hackathon 2026
-</p>
+            <p className="hackathon-tag">Cavista Technologies Hackathon 2026</p>
             <div className="tech-stack">
               <span>SCSS</span>
               <span>React</span>
@@ -81,8 +77,12 @@ export default function Project() {
             </div>
 
             <div className="view">
-              <a href="
-https://health-shield-black.vercel.app/ ">View Project</a>
+              <a
+                href="
+https://health-shield-black.vercel.app/ "
+              >
+                View Project
+              </a>
             </div>
           </div>
         </div>
