@@ -4,8 +4,8 @@ export default function About() {
   return (
     <div className="about d-flex align-center flex-column" id="about">
       <h2>About me</h2>
-      <div className="about-content d-flex align-center">
-        <div className="text">
+      <div className="about-content d-flex align-center" >
+        <div className="text" data-aos= "fade-up">
           <p>
             I'm a passionate and detail-oriented frontend developer who enjoys
             building clean, responsive, and user-friendy web experiences. My
@@ -32,27 +32,9 @@ export default function About() {
             Outside of coding, I enjoy working on challenges that help me think
             differently, reading and watching movies.
           </p>
-          <div className="skills">
-            <div className="item d-flex flex-column">
-              <b>Languages</b>
-              <span>HTML, CSS, JavaScript, C++</span>
-            </div>
-            <div className="item d-flex flex-column">
-              <b>Frameworks & Libraries</b>
-              <span>React.js, Next.js, Bootstrap, Framer-Motion, Chart.js</span>
-            </div>
-            <div className="item d-flex flex-column">
-              <b>Styling</b>
-              <span>CSS, SCSS, Bootstrap</span>
-            </div>
-            <div className="item d-flex flex-column">
-              <b>Database</b>
-              <span>Firebase</span>
-            </div>
-          </div>
         </div>
         <div className="image">
-          <img src="./hero.png" alt="" />
+          <img src="./hero.png" alt=""  data-aos="fade-up"/>
         </div>
       </div>
     </div>

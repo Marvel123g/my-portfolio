@@ -1,10 +1,11 @@
 .home {
   gap: 6rem;
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 100px 8%;
+  position: relative;
   img {
     border-radius: 50%;
     width: 100%;

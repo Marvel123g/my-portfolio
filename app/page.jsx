@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+import FloatingContact from "./components/Float";
 
 export default function Home() {
   return (
@@ -52,6 +53,8 @@ export default function Home() {
           </button>
         </div>
       </div>
+      
+      <FloatingContact/>
     </div>
   );
 }

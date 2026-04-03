@@ -1,0 +1,54 @@
+.stacks-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+    color: #2196f3;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* 🔥 Hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: #4dabf7;
+  box-shadow: 0 10px 25px rgba(77, 171, 247, 0.2);
+}
+
+.card:hover p {
+  color: #fff;
+}
