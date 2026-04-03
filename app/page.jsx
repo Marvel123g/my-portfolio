@@ -44,8 +44,8 @@ export default function Home() {
           </button>
           <button>
             <a
-              href="./myCV.pdf"
-              download="myCV.pdf"
+              href="./resume.pdf"
+              download="resume.pdf"
               className="text-decoration-none"
             >
               Download CV
