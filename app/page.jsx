@@ -44,8 +44,8 @@ export default function Home() {
           </button>
           <button>
             <a
-              href="./resume.pdf"
-              download="resume.pdf"
+              href="https://drive.google.com/file/d/1yBGCxa9Sf97WxwyR2y8pCpUQDJGnJFpG/view?usp=drivesdk"
+              // download="resume.pdf"
               className="text-decoration-none"
             >
               Download CV

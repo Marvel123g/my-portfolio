@@ -20,12 +20,12 @@ export default function Project() {
         {/* CARD */}
         <div className="grid-item" data-aos="zoom-in">
           <div className="image-wrapper">
-            <img src="./genjo.png" alt="genjo project" />
+            <img src="./cac-project.png" alt="genjo project" />
           </div>
 
           <div className="item-content">
             <h3>
-              Genjo Teacher (Work in Progress)
+              Lucidify
               <span className="role-tag">Frontend</span>
             </h3>
 
@@ -34,6 +34,11 @@ export default function Project() {
               <span>React</span>
               <span>TypeScript</span>
               <span>Framer-motion</span>
+              <span>AOS</span>
+            </div>
+
+            <div className="view">
+              <a href="https://lucidify2.netlify.app/">View Project</a>
             </div>
           </div>
         </div>
@@ -78,8 +83,7 @@ export default function Project() {
 
             <div className="view">
               <a
-                href="
-https://health-shield-black.vercel.app/ "
+                href="https://health-shield-black.vercel.app/ "
               >
                 View Project
               </a>

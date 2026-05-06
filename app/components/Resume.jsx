@@ -11,9 +11,9 @@ export default function Resume() {
         "The Budget Tracker is a web based application I built to help track income and expenses in a simple and organized way. It allows user to add transactions, view, delete and edit transaction, change currency. The project focuses on improving personal finance management through a clean and user-friendly interface.",
     },
     {
-      title: "Genjo Teacher (Collaborative Project - Work in Progress)",
+      title: "Lucidify (Collaborative Project)",
       description:
-        "This platform is a learning application designed to help individuals from various background learn Igbo language with ease. This project is being built with a backend developer who is handling the server-side logic and database.",
+        "An AI-powered compliance platform that simplifies CAC Annual Return filing for small businesses and limited liability companies by automating form completion, reducing errors, and guiding users through complex legal requirements. Designed to eliminate paperwork confusion, expensive legal assistance, and missed deadlines, it transforms CAC compliance into a fast, affordable, and user-friendly digital experience. This project was built with a backend developer who handled the server-side logic and database.",
     },
     {
       title: "Bible Study Question & Answer Platform",
