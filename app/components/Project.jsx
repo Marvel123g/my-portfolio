@@ -65,29 +65,33 @@ export default function Project() {
 
         <div className="grid-item" data-aos="zoom-in" data-aos-delay="200">
           <div className="image-wrapper">
-            <img src="./health.png" alt="my portfolio" />
+            <img src="./d-asset.png" alt="my portfolio" />
           </div>
 
           <div className="item-content">
             <h3 className="health_heading d-flex align-center">
-              Health Shield
-              <span className="role-tag">Frontend</span>
+              D-ASSET
+              <span className="role-tag">FullStack</span>
             </h3>
 
-            <p className="hackathon-tag">Cavista Technologies Hackathon 2026</p>
+            <p className="hackathon-tag">Ongoing Project</p>
             <div className="tech-stack">
-              <span>SCSS</span>
+              <span>Tailwindcss</span>
               <span>React</span>
+              <span>Express.js</span>
+              <span>PostgreSQL</span>
+              <span>TypeScript</span>
+              <span>AOS</span>
               <span>Framer-motion</span>
             </div>
 
-            <div className="view">
+            {/* <div className="view">
               <a
                 href="https://health-shield-black.vercel.app/ "
               >
                 View Project
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

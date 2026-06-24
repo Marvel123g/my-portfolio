@@ -9,7 +9,7 @@ export default function Home() {
       <img src="./hero.png" alt="hero" />
       <div className="content">
         <div className="header">
-          <b className="hi">Hi I'm a</b>{" "}
+          <b className="hi">Hi I'm </b>{" "}
           <small>
             <Typewriter
               loop
@@ -20,9 +20,10 @@ export default function Home() {
               deleteSpeed={250}
               delaySpeed={250}
               words={[
-                "Frontend Developer",
-                "React Developer",
-                "Web Enthusiast",
+                "a Frontend Developer",
+                "a React Developer",
+                "a Web Enthusiast",
+                "an Aspiring Mobile Developer(Frontend)"
               ]}
               className="typing-content"
             />

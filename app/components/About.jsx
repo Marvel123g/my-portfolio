@@ -16,11 +16,10 @@ export default function About() {
           </p>
           <p>
             Over time, I've developed a strong foundation in HTML, CSS, and
-            JavaScript, and I'm continuously improving by exploring modern tools
-            and building projects that push me to grow. What I enjoy most about
-            web development is breaking problems down, understanding how things
-            work, and writing solutions that are clean, organized, and easy to
-            maintain.
+            JavaScript, and I enjoy creating applications that are both visually appealing and easy to maintain. What I enjoy most about web development is understanding how things work, breaking complex problems into manageable parts, and writing solutions that are clean, organized, and easy to maintain.
+          </p>
+          <p>
+            Beyond frontend development, I'm expanding my skills with React Native and gaining practical knowledge of backend concepts such as APIs, authentication, databases, and server-side development. While my primary focus remains frontend development, I enjoy learning how different parts of an application work together to deliver a complete user experience.
           </p>
           <p>
             I'm currently focused on sharpening my JavaScript skills and

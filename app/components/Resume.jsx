@@ -26,6 +26,11 @@ export default function Resume() {
         "Health-Shield is a multi-platform health assistant application that leverages AI and machine learning to provide health-related services, including chat, symptom assessment, and predictions.This project was built with a backend developer who handled the server-side logic.",
     },
     {
+      title: "D-ASSET",
+      description:
+        "A responsive asset management fullstack web application currently under development to streamline asset tracking and request management within an organization. The platform is designed with role-based access, allowing users to submit new asset requests while administrators review, approve, or reject them. The system aims to improve visibility into asset activities through request tracking, notifications, and centralized asset management. The application is being built with a focus on usability, responsiveness, and efficient asset workflows across different devices.",
+    },
+    {
       title: "Frontend Mentor - Product List with Cart Challenge",
       description:
         "A responsive frontend challenge project where I built a product listing interface with a fully functional shopping cart following the official Frontend Mentor design. Users can add/remove items, adjust quantities, and view real-time totals. This project includes an order confirmation modal and adapts to multiple screen sizes.",
