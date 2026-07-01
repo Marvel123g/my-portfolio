@@ -10,7 +10,7 @@ export default function Home() {
       <div className="content">
         <div className="header">
           <b className="hi">Hi I'm </b>{" "}
-          <div style={{color: '#7cc4ff', fontFamily: 'sans-serif', letterSpacing: 1}}>
+          <div className="typewriter" style={{color: '#7cc4ff', fontFamily: 'sans-serif', letterSpacing: 1,}}>
              <Typewriter
               loop
               cursor
