@@ -1,39 +1,87 @@
 .about {
-  padding: 90px 8%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  h2 {
-    color: #2196f3;
-    margin-bottom: 2rem;
-    font-size: 40px;
+  padding: 100px 8%;
+  position: relative;
+  background: radial-gradient(circle at top left, rgba(126, 199, 255, 0.08), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 15%),
+    linear-gradient(160deg, #101214 0%, #181c22 100%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 40%);
+    pointer-events: none;
   }
+
+  h2 {
+    position: relative;
+    z-index: 1;
+    color: #7cc4ff;
+    margin-bottom: 2rem;
+    font-size: clamp(2.4rem, 3vw, 4rem);
+    letter-spacing: -0.04em;
+  }
+
   .about-content {
-    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    .text,
+    .image {
+      flex: 1 1 420px;
+      min-width: 300px;
+    }
+
     .text {
-      width: 100%;
-      max-width: 600px;
+
       p {
-        margin-top: 2rem;
-        color: #b0b0b0;
+        margin-top: 1rem;
+        color: #d0d4dd;
+        line-height: 1.9;
+        font-size: 0.8rem;
+        font-family: 'Lucida Sans';
+
         &:first-child {
           margin-top: 0;
         }
       }
     }
+
     .image {
-      width: 500px;
-      animation: imageFloat 4s ease-in-out infinite;
+      max-width: 520px;
+      width: 100%;
+      animation: imageFloat 8s ease-in-out infinite;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+
       img {
         width: 100%;
-        height: 500px;
-        border-radius: 20px;
+        height: auto;
+        max-height: 520px;
+        border-radius: 15px;
         object-fit: cover;
-        box-shadow: 0 10px 40px rgba(33, 150, 243, 0.3);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
+
       @media (max-width: 562px) {
-        width: 300px;
+        width: 100%;
+        padding: 12px;
         margin: 10px 0;
       }
     }
+
     @media (max-width: 1150px) {
       flex-direction: column;
     }
@@ -43,12 +91,12 @@
 @keyframes imageFloat {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
-  33% {
-    transform: translateY(-8px) rotate(1deg);
+  40% {
+    transform: translateY(-10px);
   }
-  66% {
-    transform: translateY(-4px) rotate(1deg);
+  80% {
+    transform: translateY(-4px);
   }
 }

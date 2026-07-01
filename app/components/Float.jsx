@@ -36,7 +36,7 @@ export default function FloatingContact() {
   className={`main-btn ${open ? "rotate" : ""}`}
   onClick={() => setOpen(!open)}
 >
-  <BsChevronDoubleUp />
+  <BsChevronDoubleUp strokeWidth={0.8}/>
 </button>
     </div>
   );

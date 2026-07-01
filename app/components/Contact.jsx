@@ -30,11 +30,12 @@ export default function Contact() {
 
   return (
     <div
-      className="contact d-flex align-center justify-center flex-column"
+      className="contact"
       id="contact"
     >
+     <div className="w-full d-flex align-center justify-center flex-column" data-aos="zoom-in">
       <h1>Contact Me</h1>
-      <div className="content d-flex">
+      <div className="content d-flex" style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
         <div className="contact-left d-flex flex-column gap-3">
           <span>
             <strong>Email:</strong> marve23lous@gmail.com
@@ -61,9 +62,10 @@ export default function Contact() {
             required
           />
 
-          <button>Send Message</button>
+          <button  style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>Send Message</button>
         </form>
       </div>
+     </div>
     </div>
   );
 }

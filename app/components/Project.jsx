@@ -16,7 +16,7 @@ export default function Project() {
         Projects
       </h2>
 
-      <div className="project-grid">
+      <div className="project-grid" style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
         {/* CARD */}
         <div className="grid-item" data-aos="zoom-in">
           <div className="image-wrapper">

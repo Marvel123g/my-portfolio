@@ -37,6 +37,24 @@ export default function Resume() {
     },
   ];
 
+  const experience = [
+    {
+      role: "Frontend Developer",
+      company: "Pixory Flow Agency",
+      period: "2026 - Present",
+      description:
+        "Creating responsive and scalable frontend applications for client projects while collaborating with a team of developers to deliver high-quality, maintainable software. Contributing to feature development, UI implementation, and continuous product improvements across multiple projects.",
+    },
+    {
+      role: "Frontend Developer",
+      company: "Dufil Prima Foods Ltd",
+      period: "2026",
+      postion: "Intern",
+      description:
+        "Developed and enhanced responsive user interface components based on tasks assigned by senior developers. Built modern, user-friendly frontend features, translated design specifications into functional interfaces, and continuously improved technical skills through practical development experience.",
+    }
+  ];
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
@@ -50,10 +68,10 @@ export default function Resume() {
   return (
     <div className="resume" id="resume" >
       <h1>Resume</h1>
-      <section className="resume-section" data-aos="fade-up">
+      <section className="resume-section" data-aos="fade-up" >
         <div className="resume-left">
           <h3>Projects</h3>
-          <div className="carousel-container">
+          <div className="carousel-container" style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
             <button
               className="carousel-arrow prev"
               onClick={handlePrev}
@@ -101,6 +119,30 @@ export default function Resume() {
             <p>D'solid Crystal Academy</p>
             <p>2016-2022</p>
           </div>
+        </div>
+      </section>
+      <section className="experience-tree" data-aos="fade-up">
+        <h3>Experience</h3>
+        <div className="timeline">
+          {experience.map((item, index) => (
+            <div
+              className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+              key={index}
+               style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}
+            >
+              <div className="timeline-head">
+                <div>
+                  <span className="role">{item.role}</span>
+                  <span className="company">{item.company}</span>
+                </div>
+                <span className="period">{item.period}</span>
+              </div>
+              <div className="timeline-meta">
+                <span>{item.postion}</span>
+              </div>
+              <p>{item.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

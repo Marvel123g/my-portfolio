@@ -5,13 +5,13 @@ import FloatingContact from "./components/Float";
 
 export default function Home() {
   return (
-    <div className="home d-flex align-center">
+    <div id="home" className="home d-flex align-center">
       <img src="./hero.png" alt="hero" />
       <div className="content">
         <div className="header">
           <b className="hi">Hi I'm </b>{" "}
-          <small>
-            <Typewriter
+          <div style={{color: '#7cc4ff', fontFamily: 'sans-serif', letterSpacing: 1}}>
+             <Typewriter
               loop
               cursor
               cursorStyle="|"
@@ -26,11 +26,14 @@ export default function Home() {
                 "an Aspiring Mobile Developer(Frontend)"
               ]}
               className="typing-content"
+              
             />
-          </small>
+          </div>
+           
+          {/* </b> */}
         </div>
         <h1>Olorunwa Marvelous</h1>
-        <p>
+        <p style={{fontFamily: "ui-sans-serif", lineHeight: 1.8}}>
           I create thoughtful and engaging web experiences that leave a lasting
           impact. Passionate about building projects that are functional and
           user-friendly. Driven by curiosity, creativity, and a desire to solve
@@ -38,12 +41,12 @@ export default function Home() {
           solutions.
         </p>
         <div className="ctas d-flex gap-3">
-          <button>
+          <button style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
             <a href="#contact" className="text-decoration-none">
               Contact
             </a>
           </button>
-          <button>
+          <button style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
             <a
               href="https://drive.google.com/file/d/1yBGCxa9Sf97WxwyR2y8pCpUQDJGnJFpG/view?usp=drivesdk"
               // download="resume.pdf"

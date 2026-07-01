@@ -1,9 +1,20 @@
 .stacks-section {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: radial-gradient(circle at top left, rgba(124, 196, 255, 0.08), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 16%),
+    linear-gradient(160deg, #101214 0%, #161a20 100%);
   color: #fff;
   text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 60%);
+    pointer-events: none;
+  }
 }
+
 
 .title {
   text-align: center;
@@ -21,7 +32,7 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.205);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 16px;

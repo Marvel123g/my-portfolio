@@ -18,15 +18,17 @@ const stacks = [
 export default function Stacks() {
   return (
     <section className="stacks-section">
-      <h3 className="title">Technology Stacks</h3>
+      <div data-aos="fade-up">
+        <h3 className="title">Technology Stacks</h3>
 
-      <div className="box">
-        {stacks.map((stack, index) => (
-          <div className="card" key={index}>
-            <img src={stack.img} alt={`${stack.name} logo`} />
-            <p>{stack.name}</p>
-          </div>
-        ))}
+        <div className="box">
+          {stacks.map((stack, index) => (
+            <div className="card" key={index}>
+              <img src={stack.img} alt={`${stack.name} logo`} />
+              <p style={{fontFamily: 'monospace'}}>{stack.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
