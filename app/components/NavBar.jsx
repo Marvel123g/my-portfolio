@@ -148,7 +148,7 @@ export default function NavBar() {
             </a>
             <button className="cv-btn">
               <a
-                href="https://drive.google.com/file/d/1yBGCxa9Sf97WxwyR2y8pCpUQDJGnJFpG/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1_QOHi66mW_BIgFu1DOZIoBVQxrVo0Hn6/view?usp=drivesdk"
                 // download="resume.pdf"
                 className="text-decoration-none"
                 onClick={handleCloseMenu}
