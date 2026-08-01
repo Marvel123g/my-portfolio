@@ -33,7 +33,7 @@ export default function About() {
           </p>
         </div>
         <div className="image">
-          <img src="./hero.png" alt=""  data-aos="fade-up"/>
+          <img src="./hero.png" alt="hero image"  data-aos="fade-up"/>
         </div>
       </div>
     </div>
