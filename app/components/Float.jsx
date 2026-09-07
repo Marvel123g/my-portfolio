@@ -21,7 +21,7 @@ export default function FloatingContact() {
           <FaWhatsapp />
         </a>
 
-        <a href="mailto:marve23lous@gmail.com" className="icon gmail">
+        <a href="mailto:marvellousolorunwa23@gmail.com" className="icon gmail">
           <MdEmail />
         </a>
 
