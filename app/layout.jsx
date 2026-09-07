@@ -1,4 +1,4 @@
-// import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Mono, Space_Grotesk } from "next/font/google";
 
 // import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
@@ -9,13 +9,25 @@ import NavBar from "./components/NavBar";
 import Project from "./components/Project";
 import Resume from "./components/Resume";
 import Stacks from "./components/Stacks";
-import AOS from "aos"
-import "aos/dist/aos.css"
-import FloatingContact from "./components/Float";
+import "aos/dist/aos.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  variable: "--font-dm-mono",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Created by marvelous",
+  title: "Olorunwa Marvelous — Frontend Developer",
+  description:
+    "Portfolio of Olorunwa Marvelous, a frontend developer creating thoughtful, responsive, and engaging web experiences.",
 };
 
 export default function RootLayout({ children }) {
@@ -28,7 +40,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className={`${spaceGrotesk.variable} ${dmMono.variable}`}>
         <Toaster />
         <NavBar />
         {children}

@@ -13,7 +13,7 @@ export default function FloatingContact() {
       {/* OPTIONS */}
       <div className={`actions ${open ? "show" : ""}`}>
         <a
-           href="https://wa.me/2348145038125?text=Hey!%20I%20checked%20out%20your%20portfolio%20and%20I%20really%20like%20your%20work.%20I'd%20love%20to%20collaborate%20with%20you."
+          href="https://wa.me/2348145038125?text=Hey!%20I%20checked%20out%20your%20portfolio%20and%20I%20really%20like%20your%20work.%20I'd%20love%20to%20collaborate%20with%20you."
           target="_blank"
           rel="noopener noreferrer"
           className="icon whatsapp"
@@ -32,12 +32,12 @@ export default function FloatingContact() {
 
       {/* MAIN BUTTON */}
 
-<button
-  className={`main-btn ${open ? "rotate" : ""}`}
-  onClick={() => setOpen(!open)}
->
-  <BsChevronDoubleUp strokeWidth={0.8}/>
-</button>
+      <button
+        className={`main-btn ${open ? "rotate" : ""}`}
+        onClick={() => setOpen(!open)}
+      >
+        <BsChevronDoubleUp strokeWidth={0.8} />
+      </button>
     </div>
   );
 }

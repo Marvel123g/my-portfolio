@@ -71,7 +71,7 @@ export default function Resume() {
       <section className="resume-section" data-aos="fade-up" >
         <div className="resume-left">
           <h3>Projects</h3>
-          <div className="carousel-container" style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
+          <div className="carousel-container">
             <button
               className="carousel-arrow prev"
               onClick={handlePrev}
@@ -128,7 +128,6 @@ export default function Resume() {
             <div
               className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
               key={index}
-               style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}
             >
               <div className="timeline-head">
                 <div>

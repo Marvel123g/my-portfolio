@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
+import Image from "next/image";
 import AOS from "aos";
 
 export default function Project() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
     });
   }, []);
 
@@ -16,11 +17,17 @@ export default function Project() {
         Projects
       </h2>
 
-      <div className="project-grid" style={{fontFamily:"monospace",letterSpacing: 1, fontWeight: 200}}>
+      <div className="project-grid">
         {/* CARD */}
         <div className="grid-item" data-aos="zoom-in">
           <div className="image-wrapper">
-            <img src="./cac-project.png" alt="genjo project" />
+            <Image
+              src="/cac-project.png"
+              alt="Lucidify project"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              quality={75}
+            />
           </div>
 
           <div className="item-content">
@@ -45,7 +52,13 @@ export default function Project() {
 
         <div className="grid-item" data-aos="zoom-in" data-aos-delay="100">
           <div className="image-wrapper">
-            <img src="./Bible-study.png" alt="bible study project" />
+            <Image
+              src="/Bible-study.png"
+              alt="Bible Study project"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              quality={75}
+            />
           </div>
 
           <div className="item-content">
@@ -65,7 +78,13 @@ export default function Project() {
 
         <div className="grid-item" data-aos="zoom-in" data-aos-delay="200">
           <div className="image-wrapper">
-            <img src="./d-asset.png" alt="my portfolio" />
+            <Image
+              src="/d-asset.png"
+              alt="D-ASSET project"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              quality={75}
+            />
           </div>
 
           <div className="item-content">
@@ -97,7 +116,13 @@ export default function Project() {
 
         <div className="grid-item" data-aos="zoom-in" data-aos-delay="300">
           <div className="image-wrapper">
-            <img src="./budget-tracker.png" alt="budget-tracker" />
+            <Image
+              src="/budget-tracker.png"
+              alt="Budget Tracker project"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              quality={75}
+            />
           </div>
 
           <div className="item-content">
@@ -118,7 +143,13 @@ export default function Project() {
 
         <div className="grid-item" data-aos="zoom-in" data-aos-delay="400">
           <div className="image-wrapper">
-            <img src="./product-list.jpg" alt="product list with cart" />
+            <Image
+              src="/product-list.jpg"
+              alt="Product list with cart project"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              quality={75}
+            />
           </div>
 
           <div className="item-content">

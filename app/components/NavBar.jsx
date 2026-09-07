@@ -1,158 +1,99 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import useWindowSize from "../hook/useWindowSize";
 import { FiMenu, FiX } from "react-icons/fi";
+
+const links = [
+  { label: "Home", href: "#", id: "home" },
+  { label: "About", href: "#about", id: "about" },
+  { label: "Project", href: "#project", id: "project" },
+  { label: "Resume", href: "#resume", id: "resume" },
+  { label: "Contact", href: "#contact", id: "contact" },
+];
+
+const resumeUrl =
+  "https://drive.google.com/file/d/1_QOHi66mW_BIgFu1DOZIoBVQxrVo0Hn6/view?usp=drivesdk";
 
 export default function NavBar() {
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
 
-  const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
-  };
-  const handleCloseMenu = () => {
-    setIsOpen(false);
-  };
-  const handleClick = (currentLink) => {
-    setActiveLink(currentLink);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
+      const sections = links
+        .map(({ id }) => document.getElementById(id))
+        .filter(Boolean);
 
-      const home = document.getElementById("home");
-      const about = document.getElementById("about");
-      const project = document.getElementById("project");
-      const resume = document.getElementById("resume");
-      const contact = document.getElementById("contact");
+      const current = [...sections]
+        .reverse()
+        .find((section) => scrollPosition >= section.offsetTop - 220);
 
-      if (!about && !resume && !project && !contact && !home) return;
-
-      if (scrollPosition >= contact.offsetTop - 200) {
-        setActiveLink("contact");
-      } else if (scrollPosition >= resume.offsetTop - 200) {
-        setActiveLink("resume");
-      } else if (scrollPosition >= project.offsetTop - 200) {
-        setActiveLink("project");
-      } else if (scrollPosition >= about.offsetTop - 200) {
-        setActiveLink("about");
-      } else {
-        setActiveLink("home");
-      }
+      if (current) setActiveLink(current.id);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleClick = (id) => {
+    setActiveLink(id);
+    setIsOpen(false);
+  };
+
   const isMobile = width <= 672;
+
   return (
-    <nav className="d-flex align-center justify-space-between">
-      <h2>marvelous</h2>
+    <nav aria-label="Primary navigation">
+      <a href="#home" aria-label="Marvelous home">
+        <h2>marvelous</h2>
+      </a>
+
       {!isMobile ? (
-        <div className="links d-flex gap-5">
-          <a
-            href="#"
-            className={`text-decoration-none btn ${
-              activeLink === "home" ? "active" : ""
-            }`}
-            onClick={() => handleClick("home")}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className={`text-decoration-none btn ${
-              activeLink === "about" ? "active" : ""
-            }`}
-            onClick={() => handleClick("about")}
-          >
-            About
-          </a>
-          <a
-            href="#project"
-            className={`text-decoration-none btn ${
-              activeLink === "project" ? "active" : ""
-            }`}
-            onClick={() => handleClick("project")}
-          >
-            Project
-          </a>
-          <a
-            href="#resume"
-            className={`text-decoration-none btn ${
-              activeLink === "resume" ? "active" : ""
-            }`}
-            onClick={() => handleClick("resume")}
-          >
-            Resume
-          </a>
-          <a
-            href="#contact"
-            className={`text-decoration-none btn ${
-              activeLink === "contact" ? "active" : ""
-            }`}
-            onClick={() => handleClick("contact")}
-          >
-            Contact
-          </a>
+        <div className="links">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              className={`text-decoration-none btn ${
+                activeLink === link.id ? "active" : ""
+              }`}
+              onClick={() => handleClick(link.id)}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       ) : (
-        <button onClick={toggleMenu}>
-          {isOpen ? (
-            <FiX size={28} style={{ color: "white" }} />
-          ) : (
-            <FiMenu size={28} style={{ color: "white" }} />
-          )}
+        <button
+          type="button"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        >
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
       )}
 
       {isOpen && (
-        <div className="mobile-link d-flex gap-5">
+        <div className="mobile-link" id="mobile-navigation">
           <div className="content">
-            <a
-              href="#"
-              className="text-decoration-none"
-              onClick={handleCloseMenu}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-decoration-none"
-              onClick={handleCloseMenu}
-            >
-              About
-            </a>
-            <a
-              href="#project"
-              className="text-decoration-none"
-              onClick={handleCloseMenu}
-            >
-              Project
-            </a>
-            <a
-              href="#resume"
-              className="text-decoration-none"
-              onClick={handleCloseMenu}
-            >
-              Resume
-            </a>
-            <a
-              href="#contact"
-              className="text-decoration-none"
-              onClick={handleCloseMenu}
-            >
-              Contact
-            </a>
-            <button className="cv-btn">
+            {links.map((link) => (
               <a
-                href="https://drive.google.com/file/d/1_QOHi66mW_BIgFu1DOZIoBVQxrVo0Hn6/view?usp=drivesdk"
-                // download="resume.pdf"
+                key={link.id}
+                href={link.href}
                 className="text-decoration-none"
-                onClick={handleCloseMenu}
+                onClick={() => handleClick(link.id)}
               >
+                {link.label}
+              </a>
+            ))}
+            <button type="button" className="cv-btn">
+              <a href={resumeUrl} onClick={() => setIsOpen(false)}>
                 Download CV
               </a>
             </button>
