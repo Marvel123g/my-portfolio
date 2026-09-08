@@ -2,7 +2,7 @@
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  z-index: 1000;
+  z-index: 1000 !important;
   display: grid;
   justify-items: end;
   gap: 0.7rem;

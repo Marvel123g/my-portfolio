@@ -1,7 +1,6 @@
 "use client";
 
 import { Typewriter } from "react-simple-typewriter";
-import FloatingContact from "./components/Float";
 
 export default function Home() {
   return (
@@ -27,7 +26,10 @@ export default function Home() {
           <div className="hero-eyebrow">
             <span className="eyebrow-line" aria-hidden="true" />
             <span>Hi, I&apos;m</span>
-            <div className="typewriter" aria-label="Frontend Developer, React Developer, Web Enthusiast, and aspiring mobile developer">
+            <div
+              className="typewriter"
+              aria-label="Frontend Developer, React Developer, Web Enthusiast, and aspiring mobile developer"
+            >
               <Typewriter
                 loop
                 cursor
@@ -51,11 +53,11 @@ export default function Home() {
             Olorunwa <span>Marvelous</span>
           </h1>
           <p>
-            I create thoughtful and engaging web experiences that leave a lasting
-            impact. Passionate about building projects that are functional and
-            user-friendly. Driven by curiosity, creativity, and a desire to solve
-            real problems. Focused on turning ideas into elegant, meaningful
-            solutions.
+            I create thoughtful and engaging web experiences that leave a
+            lasting impact. Passionate about building projects that are
+            functional and user-friendly. Driven by curiosity, creativity, and a
+            desire to solve real problems. Focused on turning ideas into
+            elegant, meaningful solutions.
           </p>
 
           <div className="ctas">
@@ -88,8 +90,6 @@ export default function Home() {
         <span className="hero-line" />
         <span>01 / 05</span>
       </div>
-
-      <FloatingContact />
     </main>
   );
 }

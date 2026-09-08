@@ -2,7 +2,7 @@
   padding: clamp(84px, 10vw, 132px) 8%;
   overflow: hidden;
   background: var(--ink);
-  z-index: -1;
+  z-index: 0;
 }
 
 .stacks-section::before {

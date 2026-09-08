@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import "../scss/main.scss";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import FloatingContact from "./components/Float";
 import NavBar from "./components/NavBar";
 import Project from "./components/Project";
 import Resume from "./components/Resume";
@@ -27,17 +28,10 @@ const dmMono = DM_Mono({
 export const metadata = {
   title: "Olorunwa Marvelous — Frontend Developer",
   description:
-    "Portfolio of Olorunwa Marvelous, a frontend developer creating thoughtful, responsive, and engaging web experiences.",
+    "Portfolio of Marvelous, a frontend developer creating thoughtful, responsive, and engaging web experiences.",
 };
 
 export default function RootLayout({ children }) {
-  // useEffect(() => {
-  //   AOS.init({
-  //     repeat: true,
-  //     duration: 2000
-  //   })
-  // }, [])
-
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.variable} ${dmMono.variable}`}>
@@ -45,10 +39,11 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <About />
-        <Stacks/>
+        <Stacks />
         <Project />
         <Resume />
         <Contact />
+        <FloatingContact />
       </body>
     </html>
   );
