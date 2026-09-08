@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 export default function Resume() {
@@ -52,7 +52,7 @@ export default function Resume() {
       postion: "Intern",
       description:
         "Developed and enhanced responsive user interface components based on tasks assigned by senior developers. Built modern, user-friendly frontend features, translated design specifications into functional interfaces, and continuously improved technical skills through practical development experience.",
-    }
+    },
   ];
 
   const handlePrev = () => {
@@ -66,19 +66,12 @@ export default function Resume() {
   const currentProject = projects[currentIndex];
 
   return (
-    <div className="resume" id="resume" >
+    <div className="resume" id="resume">
       <h1>Resume</h1>
-      <section className="resume-section" data-aos="fade-up" >
+      <section className="resume-section" data-aos="fade-up">
         <div className="resume-left">
           <h3>Projects</h3>
           <div className="carousel-container">
-            <button
-              className="carousel-arrow prev"
-              onClick={handlePrev}
-              aria-label="Previous project"
-            >
-              ❮
-            </button>
             <div className="carousel-content">
               <div className="project-item">
                 <div className="circle"></div>
@@ -98,13 +91,22 @@ export default function Resume() {
                 ))}
               </div>
             </div>
-            <button
-              className="carousel-arrow next"
-              onClick={handleNext}
-              aria-label="Next project"
-            >
-              ❯
-            </button>
+            <div className="carousel-controls">
+              <button
+                className="carousel-arrow prev"
+                onClick={handlePrev}
+                aria-label="Previous project"
+              >
+                ❮
+              </button>
+              <button
+                className="carousel-arrow next"
+                onClick={handleNext}
+                aria-label="Next project"
+              >
+                ❯
+              </button>
+            </div>
           </div>
         </div>
         <div className="resume-right">

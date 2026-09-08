@@ -267,7 +267,7 @@
 
   .project-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(390px, auto);
+    grid-auto-rows: auto;
   }
 
   // .project-grid .grid-item,
@@ -280,6 +280,11 @@
 
   .project-grid .item-content {
     padding-inline: 1rem;
+  }
+
+  .project-grid .image-wrapper {
+    height: auto;
+    aspect-ratio: 1.55;
   }
 }
 
