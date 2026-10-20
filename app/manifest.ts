@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Frontend Developer specialising in React, Next.js & TypeScript from Lagos, Nigeria.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0b0d",
-    theme_color: "#0a0b0d",
+    background_color: "#080f19",
+    theme_color: "#63b5f6",
     orientation: "portrait-primary",
     icons: [
       {
@@ -29,4 +29,3 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "en-NG",
   };
 }
-

@@ -10,13 +10,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { featuredProjects, type Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
   const cursorX = useMotionValue(-100);
@@ -39,39 +33,29 @@ function ProjectCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ delay: index * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: index * 0.1,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
       className={cn(
-        "group relative grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-canvas-border bg-canvas-card hover:border-accent/15 transition-colors duration-300",
-        isEven ? "" : "md:[&>*:first-child]:order-2",
+        "group relative grid  gap-0 rounded-2xl overflow-hidden border border-canvas-border bg-canvas-card hover:border-accent/15 transition-colors duration-300",
+        isEven
+          ? "md:grid-cols-[2fr_1fr]"
+          : "md:[&>*:first-child]:order-2 md:grid-cols-[1.5fr_1fr]",
       )}
       aria-label={`${project.title} — ${project.type} project`}
     >
-      {/* Cursor follow bubble */}
-      <motion.div
-        style={{ x: springX, y: springY }}
-        className={cn(
-          "absolute z-30 pointer-events-none w-28 h-28 rounded-full flex items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200",
-          hovered ? "opacity-100" : "opacity-0",
-        )}
-        aria-hidden="true"
-      >
-        <div className="w-full h-full rounded-full bg-accent flex items-center justify-center">
-          <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-canvas font-medium">
-            View →
-          </span>
-        </div>
-      </motion.div>
-
       {/* Image side */}
       <div className="relative h-72 md:h-auto overflow-hidden">
         <Image
           src={project.image}
-          alt={`${project.title} project screenshot`}
+          alt={`${project.title} project`}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          // sizes="(max-width: 768px) 100vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div
@@ -83,10 +67,10 @@ function ProjectCard({
         <div className="absolute top-4 left-4">
           <span
             className={cn(
-              "flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[0.12em] uppercase",
+              "flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono font-extrabold backdrop-blur-lg text-[10px] tracking-[0.12em] uppercase z-30",
               project.status === "ongoing"
-                ? "bg-amber-500/10 border border-amber-500/30 text-amber-400"
-                : "bg-accent-muted border border-accent-border text-accent",
+                ? "bg-secondary-muted border border-amber-700 text-amber-700"
+                : "bg-accent-muted border border-slate-800 text-slate-800",
             )}
           >
             <span className="w-1 h-1 rounded-full bg-current animate-pulse" />
@@ -97,13 +81,15 @@ function ProjectCard({
 
       {/* Content side */}
       <div className="flex flex-col justify-between p-8 md:p-10">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4">
           <div className="flex items-start justify-between">
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-ink-dim">
+              <span className="font-sans font-semibold text-[11px] tracking-[0.2em] uppercase text-ink-dim">
                 {project.year} · {project.type}
               </span>
-              <h3 className="font-display text-display-md text-ink">{project.title}</h3>
+              <h3 className="font-space font-medium text-display-md text-ink">
+                {project.title}
+              </h3>
             </div>
             <div className="flex gap-2 mt-1">
               {project.github && (
@@ -131,10 +117,15 @@ function ProjectCard({
             </div>
           </div>
 
-          <p className="text-ink-muted leading-relaxed text-sm">{project.tagline}</p>
+          <p className="text-ink-muted font-outfit leading-relaxed text-sm">
+            {project.tagline}
+          </p>
 
           {/* Tech tags */}
-          <div className="flex flex-wrap gap-1.5" aria-label="Technologies used">
+          <div
+            className="flex flex-wrap gap-1.5"
+            aria-label="Technologies used"
+          >
             {project.tech.map((t) => (
               <span
                 key={t}
@@ -153,7 +144,7 @@ function ProjectCard({
             className="group/link flex items-center justify-between"
             aria-label={`Read ${project.title} case study`}
           >
-            <span className="font-mono text-xs tracking-[0.15em] uppercase text-ink-muted group-hover/link:text-accent transition-colors duration-200">
+            <span className="font-sans font-medium text-xs tracking-[0.15em] uppercase text-ink-muted group-hover/link:text-accent transition-colors duration-200">
               Read Case Study
             </span>
             <motion.div
@@ -174,7 +165,7 @@ export function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="py-32 md:py-40 border-t border-canvas-border"
+      className="py-32 md:py-40 border-t border-canvas-border bg-surface-warm"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
@@ -183,13 +174,13 @@ export function Projects() {
             <SectionLabel number="03" label="Selected Work" />
             <h2
               id="projects-heading"
-              className="font-display text-display-xl text-ink mt-3"
+              className="font-sans font-medium text-6xl text-ink mt-3"
             >
               Projects that{" "}
               <span className="italic text-ink-muted">define the craft.</span>
             </h2>
           </div>
-          <p className="text-ink-muted max-w-xs text-sm leading-relaxed">
+          <p className="text-ink-muted max-w-xs text-sm font-space leading-relaxed">
             Each project is a case study — problem, process, and solution.
           </p>
         </Reveal>
@@ -218,4 +209,3 @@ export function Projects() {
     </section>
   );
 }
-

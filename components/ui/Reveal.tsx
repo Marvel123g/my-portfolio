@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { fadeUp, staggerContainer } from "@/lib/motion";
+import { staggerContainer } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 interface RevealProps {
@@ -57,21 +57,3 @@ export function Reveal({
     </motion.div>
   );
 }
-
-/**
- * Reveal a single child item — meant to be used as direct child of <Reveal stagger>
- */
-export function RevealItem({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <motion.div variants={fadeUp} className={cn(className)}>
-      {children}
-    </motion.div>
-  );
-}
-

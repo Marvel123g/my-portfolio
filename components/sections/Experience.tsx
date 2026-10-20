@@ -42,7 +42,7 @@ export function Experience() {
           <SectionLabel number="04" label="Experience & Education" />
           <h2
             id="experience-heading"
-            className="font-display text-display-xl text-ink mt-3"
+            className="font-sans text-display-xl text-ink mt-3"
           >
             Career journey &{" "}
             <span className="italic text-ink-muted">credentials.</span>
@@ -54,7 +54,7 @@ export function Experience() {
           <div>
             <div className="flex items-center gap-3 mb-10">
               <FiBriefcase size={16} className="text-accent" aria-hidden="true" />
-              <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-ink-muted">
+              <h3 className="font-outfit text-xs tracking-[0.2em] uppercase text-ink-muted">
                 Work Experience
               </h3>
             </div>
@@ -65,8 +65,8 @@ export function Experience() {
                   <div className="flex flex-col gap-4 pb-6">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
                       <div>
-                        <h4 className="font-display text-xl text-ink">{item.role}</h4>
-                        <p className="font-mono text-xs text-accent tracking-[0.08em]">
+                        <h4 className="font-space font-medium text-xl text-ink">{item.role}</h4>
+                        <p className="font-outfit text-xs text-accent tracking-[0.08em]">
                           {item.company}
                         </p>
                       </div>
@@ -74,15 +74,15 @@ export function Experience() {
                         <span className="font-mono text-[10px] tracking-[0.12em] text-ink-dim px-2.5 py-1 rounded-full border border-canvas-border bg-canvas-card">
                           {item.period}
                         </span>
-                        <span className="font-mono text-[9px] text-ink-dim tracking-[0.1em] uppercase">
+                        <span className="font-sans text-[9px] text-ink-dim tracking-[0.1em] uppercase">
                           {item.type}
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-ink-muted text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed font-outfit">{item.description}</p>
 
-                    <ul className="flex flex-col gap-2" aria-label={`Achievements at ${item.company}`}>
+                    <ul className="flex flex-col gap-2 font-outfit" aria-label={`Achievements at ${item.company}`}>
                       {item.achievements.map((achievement, j) => (
                         <li key={j} className="flex items-start gap-2.5">
                           <span className="mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0" aria-hidden="true" />
@@ -113,7 +113,7 @@ export function Experience() {
             <div>
               <div className="flex items-center gap-3 mb-10">
                 <FiBookOpen size={16} className="text-accent" aria-hidden="true" />
-                <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-ink-muted">
+                <h3 className="font-outfit text-xs tracking-[0.2em] uppercase text-ink-muted">
                   Education
                 </h3>
               </div>
@@ -122,16 +122,16 @@ export function Experience() {
                 {education.map((edu, i) => (
                   <TimelineEntry key={edu.institution} index={i}>
                     <div className="flex flex-col gap-2 pb-6">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
-                        <h4 className="font-display text-xl text-ink">{edu.degree}</h4>
+                      <div className="flex flex-col md:flex-row items-start md:justify-between gap-2">
+                        <h4 className="font-space text-xl text-ink">{edu.degree}</h4>
                         <span className="font-mono text-[10px] text-ink-dim tracking-[0.12em] px-2.5 py-1 rounded-full border border-canvas-border bg-canvas-card shrink-0">
                           {edu.period}
                         </span>
                       </div>
-                      <p className="font-mono text-xs text-accent tracking-[0.08em]">
+                      <p className="font-outfit font-medium text-xs text-accent tracking-[0.08em]">
                         {edu.institution}
                       </p>
-                      <p className="text-ink-muted text-sm leading-relaxed">{edu.focus}</p>
+                      <p className="text-ink-muted font-outfit text-sm leading-relaxed">{edu.focus}</p>
                     </div>
                   </TimelineEntry>
                 ))}
@@ -143,13 +143,13 @@ export function Experience() {
               <div className="p-6 rounded-2xl border border-accent/20 bg-accent-muted">
                 <div className="flex flex-col gap-4">
                   <div>
-                    <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent mb-2">
+                    <p className="font-space text-[10px] tracking-[0.15em] uppercase text-accent mb-2">
                       Download CV
                     </p>
-                    <h4 className="font-display text-xl text-ink">
+                    <h4 className="font-outfit text-xl text-ink">
                       Want the complete résumé?
                     </h4>
-                    <p className="text-ink-muted text-sm mt-1 leading-relaxed">
+                    <p className="text-ink-muted font-outfit text-sm mt-1 leading-relaxed">
                       Full PDF with references, project details, and contact information.
                     </p>
                   </div>
@@ -157,7 +157,7 @@ export function Experience() {
                     href={RESUME_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="self-start flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-accent text-canvas font-mono text-xs tracking-[0.1em] uppercase hover:bg-accent-dim transition-colors duration-200"
+                    className="self-start flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-accent text-canvas font-sans text-xs tracking-[0.1em] uppercase hover:bg-accent-dim transition-colors duration-200"
                   >
                     Download PDF ↗
                   </a>

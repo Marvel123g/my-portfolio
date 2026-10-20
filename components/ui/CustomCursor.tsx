@@ -1,23 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 export function CustomCursor() {
-
   const rawX = useMotionValue(-100);
   const rawY = useMotionValue(-100);
   const x = useSpring(rawX, { stiffness: 600, damping: 40, mass: 0.3 });
   const y = useSpring(rawY, { stiffness: 600, damping: 40, mass: 0.3 });
 
   useEffect(() => {
-
-
     const handleMove = (e: MouseEvent) => {
       rawX.set(e.clientX);
       rawY.set(e.clientY);
     };
-
 
     window.addEventListener("mousemove", handleMove, { passive: true });
 

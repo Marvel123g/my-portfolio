@@ -39,10 +39,10 @@ export function Marquee({
         {allItems.map((item, i) => (
           <span
             key={i}
-            className="inline-flex items-center gap-8 font-mono text-xs tracking-[0.15em] uppercase text-ink-dim"
+            className="flex items-center gap-8 font-sans font-medium text-xs tracking-[0.15em] uppercase text-ink-dim"
           >
             {item}
-            <span className="text-accent opacity-60">{separator}</span>
+            <span className="bg-accent opacity-60 rounded-full w-1.5 h-1.5 ">{separator}</span>
           </span>
         ))}
       </div>

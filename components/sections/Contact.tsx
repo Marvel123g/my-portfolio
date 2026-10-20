@@ -4,9 +4,18 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "@emailjs/browser";
 import { z } from "zod";
 import toast from "react-hot-toast";
-import { FiMail, FiPhone, FiMapPin, FiCopy, FiCheck, FiSend, FiArrowUpRight } from "react-icons/fi";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiCopy,
+  FiCheck,
+  FiSend,
+  FiArrowUpRight,
+} from "react-icons/fi";
 import { FaWhatsapp, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -24,18 +33,13 @@ type FormValues = z.infer<typeof schema>;
 const SOCIALS = [
   {
     label: "GitHub",
-    href: "https://github.com/Marvelous-Dev",
+    href: "https://github.com/Marvel123g",
     icon: FaGithub,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/olorunwa-marvelous",
+    href: "https://linkedin.com/in/marvellous-olorunwa-16aa72362",
     icon: FaLinkedin,
-  },
-  {
-    label: "X / Twitter",
-    href: "https://x.com/marvelousdev",
-    icon: FaXTwitter,
   },
 ];
 
@@ -70,32 +74,27 @@ export function Contact() {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const res = await fetch("https://formspree.io/f/xbljedov", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(data),
-      });
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      if (res.ok) {
-        toast.success("Message delivered! I'll reply within 24 hours.", {
-          style: {
-            background: "#131619",
-            color: "#f0f0ef",
-            border: "1px solid rgba(200,240,78,0.3)",
-            fontFamily: "var(--font-mono)",
-            fontSize: "0.8rem",
-          },
-        });
-        reset();
-      } else {
-        throw new Error("Server error");
-      }
+      await emailjs.send(serviceId, templateId, data, publicKey);
+      toast.success("Message delivered! I'll reply within 24 hours.", {
+        style: {
+          background: "var(--canvas-card)",
+          color: "var(--ink)",
+          border: "1px solid var(--secondary-border)",
+          fontFamily: "var(--font-space)",
+          fontSize: "0.8rem",
+        },
+      });
+      reset();
     } catch {
       toast.error("Couldn't send message — please try email directly.", {
         style: {
-          background: "#131619",
-          color: "#f0f0ef",
-          border: "1px solid rgba(239,68,68,0.3)",
+          background: "var(--canvas-card)",
+          color: "var(--ink)",
+          border: "1px solid var(--danger-border)",
           fontFamily: "var(--font-mono)",
           fontSize: "0.8rem",
         },
@@ -114,9 +113,9 @@ export function Contact() {
     }
     toast.success(`${type === "email" ? "Email" : "Phone"} copied!`, {
       style: {
-        background: "#131619",
-        color: "#f0f0ef",
-        border: "1px solid rgba(200,240,78,0.3)",
+        background: "var(--canvas-card)",
+        color: "var(--ink)",
+        border: "1px solid var(--secondary-border)",
         fontFamily: "var(--font-mono)",
         fontSize: "0.8rem",
       },
@@ -124,19 +123,20 @@ export function Contact() {
   };
 
   const inputClass = cn(
-    "w-full px-4 py-3 rounded-xl border bg-canvas-mid font-mono text-sm text-ink placeholder:text-ink-dim",
+    "w-full px-4 py-3 rounded-xl border bg-canvas-mid font-outfit text-sm text-ink placeholder:text-ink-dim",
     "transition-all duration-200 outline-none",
     "focus:border-accent/40 focus:bg-canvas-card",
     "border-canvas-border",
   );
 
-  const errorClass = "mt-1.5 font-mono text-[10px] text-red-400 tracking-[0.08em]";
+  const errorClass =
+    "mt-1.5 font-mono font-medium text-[10px] text-danger tracking-wider";
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-32 md:py-40 border-t border-canvas-border"
+      className="py-32 md:py-40 border-t border-canvas-border bg-surface-blue"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
@@ -144,34 +144,34 @@ export function Contact() {
           <SectionLabel number="05" label="Contact" />
           <h2
             id="contact-heading"
-            className="font-display text-display-xl text-ink mt-3 max-w-2xl"
+            className="font-sans font-medium tracking-wide text-5xl sm:text-6xl text-ink mt-3 max-w-2xl"
           >
             Let&apos;s build something{" "}
-            <span className="italic text-accent">exceptional</span> together.
+            <span className="italic text-secondary">exceptional</span> together.
           </h2>
-          <p className="mt-4 text-ink-muted max-w-lg leading-relaxed">
-            Frontend role, client project, or engineering collaboration — my inbox is open. I
-            respond within 24 hours.
+          <p className="mt-4 text-ink-muted max-w-lg font-space leading-relaxed">
+            Frontend role, client project, or engineering collaboration — my
+            inbox is open. I respond within 24 hours.
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-[380px,1fr] gap-10">
+        <div className="grid max-[332px]:items-center justify-center md:grid-cols-[380px,1fr] gap-10 w-full">
           {/* Left: Info column */}
           <Reveal className="flex flex-col gap-6">
             {/* Status card */}
-            <div className="p-5 rounded-xl border border-accent/20 bg-accent-muted">
+            <div className="p-5 rounded-xl border border-secondary-border bg-secondary-muted">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-secondary">
                   Immediate Availability
                 </span>
               </div>
-              <p className="text-ink-muted text-sm leading-relaxed">
-                Open to full-time roles, contract work, and freelance projects. Remote-first, global
-                opportunities welcome.
+              <p className="text-ink-muted text-sm font-outfit leading-relaxed">
+                Open to full-time roles, contract work, and freelance projects.
+                Remote-first, global opportunities welcome.
               </p>
               {lagosTime && (
-                <p className="mt-3 font-mono text-[10px] text-ink-dim">
+                <p className="mt-3 font-space text-[12px] font-medium text-ink-dim">
                   Lagos time · {lagosTime}
                 </p>
               )}
@@ -185,7 +185,7 @@ export function Contact() {
                   <FiMail size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-mono text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
+                  <p className="font-mono font-bold text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
                     Email
                   </p>
                   <a
@@ -197,11 +197,17 @@ export function Contact() {
                 </div>
                 <button
                   type="button"
-                  onClick={() => copy("marvellousolorunwa23@gmail.com", "email")}
+                  onClick={() =>
+                    copy("marvellousolorunwa23@gmail.com", "email")
+                  }
                   className="w-8 h-8 flex items-center justify-center rounded-full border border-canvas-border text-ink-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
                   aria-label="Copy email address"
                 >
-                  {copiedEmail ? <FiCheck size={13} className="text-accent" /> : <FiCopy size={13} />}
+                  {copiedEmail ? (
+                    <FiCheck size={13} className="text-accent" />
+                  ) : (
+                    <FiCopy size={13} />
+                  )}
                 </button>
               </div>
 
@@ -211,7 +217,7 @@ export function Contact() {
                   <FiPhone size={15} />
                 </div>
                 <div className="flex-1">
-                  <p className="font-mono text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
+                  <p className="font-mono font-bold text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
                     Phone
                   </p>
                   <a
@@ -227,7 +233,11 @@ export function Contact() {
                   className="w-8 h-8 flex items-center justify-center rounded-full border border-canvas-border text-ink-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
                   aria-label="Copy phone number"
                 >
-                  {copiedPhone ? <FiCheck size={13} className="text-accent" /> : <FiCopy size={13} />}
+                  {copiedPhone ? (
+                    <FiCheck size={13} className="text-accent" />
+                  ) : (
+                    <FiCopy size={13} />
+                  )}
                 </button>
               </div>
 
@@ -237,7 +247,7 @@ export function Contact() {
                   <FiMapPin size={15} />
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
+                  <p className="font-mono font-bold text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5">
                     Location
                   </p>
                   <span className="font-mono text-xs text-ink-muted">
@@ -251,20 +261,23 @@ export function Contact() {
                 href="https://wa.me/2348145038125?text=Hi%20Marvelous%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20connect!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 py-4 border-b border-canvas-border hover:text-green-400 transition-colors duration-200"
+                className="group flex items-center gap-4 py-4 border-b border-canvas-border hover:text-accent transition-colors duration-200"
               >
-                <div className="w-9 h-9 rounded-full border border-canvas-border flex items-center justify-center text-ink-dim group-hover:text-green-400 group-hover:border-green-400/30 transition-all duration-200 shrink-0">
+                <div className="w-9 h-9 rounded-full border border-canvas-border flex items-center justify-center text-ink-dim group-hover:text-accent group-hover:border-accent/60 transition-all duration-200 shrink-0">
                   <FaWhatsapp size={15} />
                 </div>
                 <div className="flex-1">
-                  <p className="font-mono text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5 group-hover:text-green-400">
+                  <p className="font-mono font-bold text-[10px] text-ink-dim tracking-[0.12em] uppercase mb-0.5 group-hover:text-accent">
                     WhatsApp
                   </p>
-                  <span className="font-mono text-xs text-ink-muted group-hover:text-green-300 transition-colors duration-200">
+                  <span className="font-mono text-xs text-ink-muted group-hover:text-accent transition-colors duration-200">
                     Fastest response time
                   </span>
                 </div>
-                <FiArrowUpRight size={13} className="text-ink-dim group-hover:text-green-400 transition-colors duration-200" />
+                <FiArrowUpRight
+                  size={13}
+                  className="text-ink-dim group-hover:text-accent transition-colors duration-200"
+                />
               </a>
             </div>
 
@@ -293,12 +306,18 @@ export function Contact() {
               className="flex flex-col gap-5 p-8 rounded-2xl border border-canvas-border bg-canvas-card"
               aria-label="Contact form"
             >
-              <h3 className="font-display text-2xl text-ink">Send a Message</h3>
+              <h3 className="font-space text-2xl text-ink">Send a Message</h3>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block font-mono text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2">
-                    Your Name <span className="text-accent" aria-hidden="true">*</span>
+                  <label
+                    htmlFor="name"
+                    className="block font-space font-medium text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2"
+                  >
+                    Your Name{" "}
+                    <span className="text-accent" aria-hidden="true">
+                      *
+                    </span>
                   </label>
                   <input
                     id="name"
@@ -319,8 +338,14 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block font-mono text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2">
-                    Email Address <span className="text-accent" aria-hidden="true">*</span>
+                  <label
+                    htmlFor="email"
+                    className="block font-space font-medium text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2"
+                  >
+                    Email Address{" "}
+                    <span className="text-accent" aria-hidden="true">
+                      *
+                    </span>
                   </label>
                   <input
                     id="email"
@@ -342,8 +367,14 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block font-mono text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2">
-                  Subject <span className="text-accent" aria-hidden="true">*</span>
+                <label
+                  htmlFor="subject"
+                  className="block font-space font-medium text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2"
+                >
+                  Subject{" "}
+                  <span className="text-accent" aria-hidden="true">
+                    *
+                  </span>
                 </label>
                 <input
                   id="subject"
@@ -351,7 +382,9 @@ export function Contact() {
                   placeholder="Frontend role / Collaboration / Project"
                   aria-required="true"
                   aria-invalid={!!errors.subject}
-                  aria-describedby={errors.subject ? "subject-error" : undefined}
+                  aria-describedby={
+                    errors.subject ? "subject-error" : undefined
+                  }
                   {...register("subject")}
                   className={inputClass}
                 />
@@ -363,8 +396,14 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-mono text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2">
-                  Message <span className="text-accent" aria-hidden="true">*</span>
+                <label
+                  htmlFor="message"
+                  className="block font-space font-medium text-[10px] tracking-[0.12em] uppercase text-ink-dim mb-2"
+                >
+                  Message{" "}
+                  <span className="text-accent" aria-hidden="true">
+                    *
+                  </span>
                 </label>
                 <textarea
                   id="message"
@@ -372,7 +411,9 @@ export function Contact() {
                   placeholder="Tell me about the project, role, timeline, or objectives..."
                   aria-required="true"
                   aria-invalid={!!errors.message}
-                  aria-describedby={errors.message ? "message-error" : undefined}
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
                   {...register("message")}
                   className={cn(inputClass, "resize-y min-h-[140px]")}
                 />
@@ -400,7 +441,11 @@ export function Contact() {
                   <>
                     <motion.span
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 0.8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                       className="w-3.5 h-3.5 border-2 border-canvas/30 border-t-canvas rounded-full"
                       aria-hidden="true"
                     />
@@ -420,4 +465,3 @@ export function Contact() {
     </section>
   );
 }
-

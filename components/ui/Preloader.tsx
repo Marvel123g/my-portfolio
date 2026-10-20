@@ -32,11 +32,11 @@ export function Preloader({ onComplete }: PreloaderProps) {
       });
     }, 80);
 
-    // Auto-complete after 1.5s
+    // Auto-complete after 2s
     const timeout = setTimeout(() => {
       setExiting(true);
       setTimeout(onComplete, 600);
-    }, 1500);
+    }, 2000);
 
     return () => {
       clearInterval(interval);
@@ -67,7 +67,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
             animate="visible"
             style={{ perspective: "800px" }}
           >
-            <div className="flex flex-wrap justify-center gap-x-[0.5px] font-display text-display-lg text-ink tracking-[-0.03em]">
+            <div className="flex flex-wrap justify-center gap-x-[0.5px] font-space font-medium text-display-lg text-ink tracking-[-0.03em]">
               {CHARS.map((char, i) =>
                 char === " " ? (
                   <span key={i} className="w-4" aria-hidden="true" />
@@ -91,7 +91,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.4 }}
-            className="font-mono text-[10px] tracking-[0.25em] uppercase text-ink-muted"
+            className="font-outfit text-[10px] tracking-[0.25em] uppercase text-ink-muted"
           >
             Frontend Developer · React Specialist
           </motion.p>

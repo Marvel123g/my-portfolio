@@ -78,13 +78,19 @@ export default async function CaseStudyPage({ params }: Props) {
           <nav aria-label="Breadcrumb" className="mb-12">
             <ol className="flex items-center gap-2 font-mono text-[10px] tracking-[0.12em] uppercase text-ink-dim">
               <li>
-                <Link href="/" className="hover:text-accent transition-colors duration-200">
+                <Link
+                  href="/"
+                  className="hover:text-accent transition-colors duration-200"
+                >
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/#projects" className="hover:text-accent transition-colors duration-200">
+                <Link
+                  href="/#projects"
+                  className="hover:text-accent transition-colors duration-200"
+                >
                   Work
                 </Link>
               </li>
@@ -107,7 +113,7 @@ export default async function CaseStudyPage({ params }: Props) {
               <span
                 className={`flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
                   project.status === "ongoing"
-                    ? "text-amber-400"
+                    ? "text-secondary"
                     : "text-accent"
                 }`}
               >
@@ -115,11 +121,13 @@ export default async function CaseStudyPage({ params }: Props) {
                 {project.status === "ongoing" ? "In Progress" : "Live"}
               </span>
             </div>
-            <h1 className="font-display text-display-xl text-ink mb-4">{project.title}</h1>
-            <p className="text-ink-muted text-xl leading-relaxed mb-6">{project.tagline}</p>
+            <h1 className="font-space font-medium text-display-xl text-ink mb-4">
+              {project.title}
+            </h1>
+            {/* <p className="text-ink-muted text-sm font-outfit leading-relaxed mb-6">{project.tagline}</p> */}
 
             {/* Actions */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mt-50">
               {project.url && (
                 <a
                   href={project.url}
@@ -145,11 +153,14 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
 
             {/* Tech tags */}
-            <div className="flex flex-wrap gap-2 mt-6" aria-label="Technologies used">
+            <div
+              className="flex flex-wrap gap-2 mt-6"
+              aria-label="Technologies used"
+            >
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 rounded-full border border-canvas-border bg-canvas-card font-mono text-[10px] tracking-[0.08em] uppercase text-ink-muted"
+                  className="px-3 py-1 rounded-full border border-canvas-border bg-canvas-card font-bold font-mono text-[10px] tracking-[0.08em] uppercase text-ink-muted"
                 >
                   {t}
                 </span>
@@ -161,11 +172,11 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-canvas-border bg-canvas-card mb-16">
             <Image
               src={project.image}
-              alt={`${project.title} project screenshot`}
+              alt={`${project.title} project`}
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 896px"
-              className="object-cover"
+              // sizes="(max-width: 768px) 100vw, 896px"
+              className="object-contain"
             />
           </div>
 
@@ -177,10 +188,12 @@ export default async function CaseStudyPage({ params }: Props) {
               { label: "Solution", num: "03", content: project.solution },
             ].map(({ label, num, content }) => (
               <section key={label} aria-labelledby={`section-${label}`}>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="font-mono text-[10px] text-ink-dim tracking-[0.2em]">{num}</span>
+                <div className="flex items-center font-space gap-3 mb-5">
+                  <span className=" text-[10px] text-ink-dim tracking-[0.2em]">
+                    {num}
+                  </span>
                   <span className="h-px w-8 bg-canvas-border" />
-                  <span className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase">
+                  <span className=" text-[10px] text-accent tracking-[0.2em] uppercase">
                     {label}
                   </span>
                 </div>
@@ -195,7 +208,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
 
           {/* Navigation — prev/next projects */}
-          <div className="mt-24 pt-12 border-t border-canvas-border flex justify-between items-center">
+          <div className="mt-24 pt-12 border-t border-canvas-border flex flex-row justify-between items-center">
             <Link
               href="/#projects"
               className="group flex items-center gap-2 font-mono text-xs tracking-[0.12em] uppercase text-ink-muted hover:text-accent transition-colors duration-200"
@@ -208,7 +221,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </Link>
             <Link
               href="/#contact"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent/30 bg-accent-muted text-accent font-mono text-xs tracking-[0.1em] uppercase hover:bg-accent hover:text-canvas transition-all duration-200"
+              className="flex items-center gap-2 px-2 sm:px-5 py-2.5 rounded-full border border-accent/30 bg-accent-muted text-accent font-mono text-xs tracking-[0.1em] uppercase hover:bg-accent hover:text-canvas transition-all duration-200"
             >
               Start a Project →
             </Link>
@@ -218,4 +231,3 @@ export default async function CaseStudyPage({ params }: Props) {
     </>
   );
 }
-

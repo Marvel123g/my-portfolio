@@ -28,7 +28,7 @@ export function TypedText({
 }: TypedTextProps) {
   const [displayed, setDisplayed] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
-  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+  const [phase, setPhase] = useState<"typing" | "deleting">("typing");
 
   useEffect(() => {
     const currentWord = words[wordIndex % words.length];
@@ -41,10 +41,8 @@ export function TypedText({
           typeSpeed,
         );
       } else {
-        timeout = setTimeout(() => setPhase("pausing"), pauseDuration);
+        timeout = setTimeout(() => setPhase("deleting"), pauseDuration);
       }
-    } else if (phase === "pausing") {
-      setPhase("deleting");
     } else {
       if (displayed.length > 0) {
         timeout = setTimeout(
@@ -52,13 +50,23 @@ export function TypedText({
           deleteSpeed,
         );
       } else {
-        setWordIndex((i) => i + 1);
-        setPhase("typing");
+        timeout = setTimeout(() => {
+          setWordIndex((i) => i + 1);
+          setPhase("typing");
+        }, 0);
       }
     }
 
     return () => clearTimeout(timeout);
-  }, [displayed, phase, wordIndex, words, typeSpeed, deleteSpeed, pauseDuration]);
+  }, [
+    displayed,
+    phase,
+    wordIndex,
+    words,
+    typeSpeed,
+    deleteSpeed,
+    pauseDuration,
+  ]);
 
   return (
     <span className={className} aria-live="polite" aria-atomic="true">
@@ -74,4 +82,3 @@ export function TypedText({
     </span>
   );
 }
-
