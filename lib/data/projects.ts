@@ -125,7 +125,7 @@ export const projects: Project[] = [
     type: "Fullstack",
     status: "ongoing",
     tech: ["Expo", "React", "TypeScript", "Express.js", "PostgreSQL"],
-    image: "/skillmirror.png",
+    image: "/projects/skillmirror.png",
     featured: false,
     
   problem:  "Learning a new skill or pursuing a personal goal can feel overwhelming without a clear direction. People often struggle to identify what to learn next, find reliable learning resources, stay consistent, and measure their progress. Generic learning platforms offer content but don't always provide a personalized path that adapts to an individual's existing skills, ambitions, and available time.",
