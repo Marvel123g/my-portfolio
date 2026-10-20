@@ -78,6 +78,12 @@ export function Contact() {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
+
+      if (!serviceId || !templateId || !publicKey) {
+  toast.error("Couldn't send message — please try email directly.");
+  return;
+      }
+      
       await emailjs.send(serviceId, templateId, data, publicKey);
       toast.success("Message delivered! I'll reply within 24 hours.", {
         style: {
