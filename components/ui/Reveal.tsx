@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { motion, useInView, type  Variants  } from "motion/react";
 import { useRef } from "react";
 import { staggerContainer } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ export function Reveal({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount });
 
-  const variants = stagger
+  const variants: Variants  = stagger
     ? staggerContainer
     : {
         hidden: { opacity: 0, y: 24 },

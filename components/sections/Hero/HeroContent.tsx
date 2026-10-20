@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 
 import { TypedText } from "@/components/ui/TypedText";
 import { TYPED_WORDS } from "./hero.data";
@@ -15,7 +15,7 @@ const CONTENT_VARIANTS = {
   },
 };
 
-const ITEM_VARIANTS = {
+const ITEM_VARIANTS: Variants = {
   hidden: {
     opacity: 0,
     y: 16,
