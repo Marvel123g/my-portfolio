@@ -58,7 +58,7 @@ export function HeroActions() {
       {/* Primary action */}
       <a
         href="#projects"
-        className={`${ACTION_CLASS} group bg-accent w-full text-canvas hover:bg-accent-dim`}
+        className={`${ACTION_CLASS} group bg-accent max-[400px]:w-full text-canvas hover:bg-accent-dim`}
       >
         View my work
 
@@ -74,7 +74,7 @@ export function HeroActions() {
         href={RESUME_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${ACTION_CLASS} border w-full border-canvas-border bg-canvas-card text-ink hover:border-accent/50 hover:text-accent`}
+        className={`${ACTION_CLASS} border  max-[400px]:w-full border-canvas-border bg-canvas-card text-ink hover:border-accent/50 hover:text-accent`}
       >
         View résumé
 
@@ -94,7 +94,7 @@ export function HeroActions() {
             ? "Email address copied"
             : "Copy email address to clipboard"
         }
-        className={`${ACTION_CLASS} border w-full border-transparent text-ink-muted hover:border-canvas-border hover:text-ink`}
+        className={`${ACTION_CLASS} border  max-[400px]:w-full border-transparent text-ink-muted hover:border-canvas-border hover:text-ink`}
       >
         {copied ? (
           <FiCheck
