@@ -38,7 +38,7 @@ const SOCIALS = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/marvellous-olorunwa-16aa72362",
+    href: "https://www.linkedin.com/in/marvellous-olorunwa-16aa72362",
     icon: FaLinkedin,
   },
 ];
