@@ -87,7 +87,7 @@ export function Footer() {
                 <FaGithub size={14} />
               </a>
               <a
-                href="https://linkedin.com/in/marvellous-olorunwa-16aa72362"
+                href="https://www.linkedin.com/in/marvellous-olorunwa-16aa72362"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
